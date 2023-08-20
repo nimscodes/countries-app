@@ -46,7 +46,7 @@ const FilterByRegion = ({ selectedRegion, onRegionChange }) => {
   })
 
   return (
-    <div ref={divEl} className='relative w-[200px] p-5 text-very-dark-blue-text dark:text-white bg-white dark:bg-dark-blue flex items-center shadow-md rounded-md text-sm'>
+    <div ref={divEl} className='relative w-[200px] p-4 text-very-dark-blue-text dark:text-white bg-white dark:bg-dark-blue flex items-center shadow-md rounded-md text-sm'>
       <div onClick={handleToggle} className='w-full flex items-center justify-between gap-2 cursor-pointer '>
         {selectedRegion?.name || <span>Filter By Region</span>}
         {isOpen ? <FiChevronDown /> : <FiChevronUp />}
