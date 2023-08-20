@@ -21,7 +21,7 @@ const CountryDetail = ({ countries, currentPage }) => {
     const renderedBorders = country.borders?.map((border) => {
     const country = getCountry(border);
     return (
-    <Link key={country.name} to={`/country/${country.name}`} className="rounded flex cursor-pointer justify-center items-center  bg-white dark:bg-dark-blue px-5 py-2 shadow-md">
+    <Link key={country.name} to={`/country/${country.name}?page=${currentPage}`} className="rounded flex cursor-pointer justify-center items-center  bg-white dark:bg-dark-blue px-5 py-2 shadow-md">
       {country.name}
     </Link>
     )
@@ -46,7 +46,7 @@ const CountryDetail = ({ countries, currentPage }) => {
         <div className="w-full flex flex-col gap-[50px] lg:flex-1">
           <div className="flex flex-col gap-8">
             <h1 className="text-2xl font-bold">{country.name}</h1>
-            <div className="flex flex-col gap-[50px] md:flex-row text-sm md:justify-between">
+            <div className="flex flex-col gap-[50px] md:flex-row  md:justify-between">
               <div className="flex flex-col gap-4">
                 <p>
                   <span className="font-semibold mr-2">Native Name:</span>
@@ -75,13 +75,13 @@ const CountryDetail = ({ countries, currentPage }) => {
                   {country.topLevelDomain}
                 </p>
                 <p>
-                  <span className="font-semibold mr-2">{country.currencies < 2 ? 'Currencies' : 'Currency'}:</span>
+                  <span className="font-semibold mr-2">{country.currencies.length < 2 ? 'Currency' : 'Currencies'}:</span>
                   {country.currencies.map((currency, index) =>
                     index ? `, ${currency.name}` : currency.name
                   )}
                 </p>
                 <p>
-                  <span className="font-semibold mr-2">{country.languages < 2 ? 'Language' : 'Languages'}:</span>
+                  <span className="font-semibold mr-2">{country.languages.length < 2 ? 'Language' : 'Languages'}:</span>
                   {country.languages.map((language, index) =>
                     index ? `, ${language.name}` : language.name
                   )}
@@ -90,7 +90,7 @@ const CountryDetail = ({ countries, currentPage }) => {
             </div>
           </div>
           <div className="flex md:items-start flex-col gap-5 md:flex-row">
-            { country.borders &&  <h2 className="flex  py-2 font-semibold">Border Countries:</h2>}
+            { country.borders &&  <h2 className="flex  py-2 font-semibold">Border{country.borders.length >= 2 ? 'Countries' : 'Country'}:</h2>}
             <div className="flex flex-1 flex-wrap gap-2">
               {renderedBorders}
             </div>

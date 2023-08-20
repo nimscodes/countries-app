@@ -3,11 +3,11 @@ import { FiChevronDown, FiChevronUp } from 'react-icons/fi'
 
 const FilterByRegion = ({ selectedRegion, onRegionChange }) => {
   const options = [
-    {name: 'Africa', value: 'africa' },
-    {name: 'Americas', value: 'americas' },
-    {name: 'Asia', value: 'asia' },
-    {name: 'Europe', value: 'europe' },
-    {name: 'Oceania', value: 'oceania' },
+    {name: 'Africa', value: 'Africa' },
+    {name: 'Americas', value: 'Americas' },
+    {name: 'Asia', value: 'Asia' },
+    {name: 'Europe', value: 'Europe' },
+    {name: 'Oceania', value: 'Oceania' },
   ]
 
   const [isOpen, setIsOpen] = useState(false);
