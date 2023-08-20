@@ -54,7 +54,7 @@ const Countries = ({
   });
 
   return (
-    <div className="w-full h-screen">
+    <div className="w-full">
       <div className="flex flex-col h-full">
         <div>
           <div className="flex flex-col gap-5 md:flex-row justify-between mb-10">
