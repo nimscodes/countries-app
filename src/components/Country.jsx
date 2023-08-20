@@ -7,9 +7,9 @@ const Country = ({ country }) => {
         <img className='w-full h-full object-cover' src={country.flag}  alt={country.name}/>
       </figure>
       <div className='flex flex-col p-4 gap-3'>
-        <h1 className='font-[600]'>{country.name}</h1>
+        <h1 className='font-bold'>{country.name}</h1>
         <div className='flex flex-col gap-2'>
-          <p><span className='font-semibold'>Population:</span> {country.population}</p>
+          <p><span className='font-semibold'>Population:</span> {country.population.toLocaleString()}</p>
           <p><span className='font-semibold'>Region:</span> {country.region}</p>
           <p><span className='font-semibold'>Capital:</span> {country.capital}</p>
         </div>
