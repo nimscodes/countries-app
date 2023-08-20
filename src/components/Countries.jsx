@@ -13,7 +13,7 @@ const Countries = ({
   handlePageChange
 }) => {
   
-
+  
   const filteredCountries = data.filter(
     (country) =>
       country.name.toLowerCase().includes(searchQuery.toLowerCase()) &&

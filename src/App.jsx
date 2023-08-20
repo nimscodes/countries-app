@@ -20,7 +20,9 @@ function App() {
   };
 
   const handlePageChange = (newPage) => {
-    setCurrentPage(newPage);
+    if (typeof newPage === 'number'){
+      setCurrentPage(newPage);
+    } 
   };
 
   const onRegionChange = (option) => {
