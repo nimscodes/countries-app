@@ -75,13 +75,13 @@ const CountryDetail = ({ countries, currentPage }) => {
                   {country.topLevelDomain}
                 </p>
                 <p>
-                  <span className="font-semibold mr-2">Currencies:</span>
+                  <span className="font-semibold mr-2">{country.currencies < 2 ? 'Currencies' : 'Currency'}:</span>
                   {country.currencies.map((currency, index) =>
                     index ? `, ${currency.name}` : currency.name
                   )}
                 </p>
                 <p>
-                  <span className="font-semibold mr-2">Languages:</span>
+                  <span className="font-semibold mr-2">{country.languages < 2 ? 'Language' : 'Languages'}:</span>
                   {country.languages.map((language, index) =>
                     index ? `, ${language.name}` : language.name
                   )}
