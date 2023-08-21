@@ -43,12 +43,10 @@ function App() {
     setDarkMode(!checked);
   };
 
-  console.log(countries)
-  
 
   return (
     <Router>
-      <div className="min-h-screen font-nunito-sans  bg-very-light-gray dark:bg-very-dark-blue text-very-dark-blue-text dark:text-white">
+      <div className="min-h-screen font-nunito-sans  bg-gray-100 dark:bg-very-dark-blue text-very-dark-blue-text dark:text-white">
         <Header darkMode={darkMode} onToggleMode={onToggleMode} />
         <div className="w-full p-5 mx-auto">
           <Routes>

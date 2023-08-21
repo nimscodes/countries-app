@@ -48,7 +48,7 @@ const CountryDetail = ({ countries, currentPage }) => {
   });
 
   return (
-    <div className="w-full sm:w-5/6 lg:w-full text-[16px] xl:w-5/6 mx-auto text-very-dark-blue-text dark:text-white">
+    <div className="w-full sm:w-5/6 lg:w-full text-[14px] xl:w-[90%] mx-auto text-very-dark-blue-text dark:text-white">
       <Link
         onClick={handleGoBack}
         className="mb-[60px] inline-flex cursor-pointer justify-center items-center gap-2 bg-white dark:bg-dark-blue px-6 py-2 shadow-md"
@@ -63,7 +63,7 @@ const CountryDetail = ({ countries, currentPage }) => {
             className="w-full h-full object-cover"
           />
         </figure>
-        <div className="w-full flex flex-col gap-[50px] lg:flex-1">
+        <div className="w-full flex flex-col gap-[50px] lg:items-center lg:justify-center lg:flex-1">
           <div className="flex flex-col gap-8">
             <h1 className="text-2xl font-bold">{country?.name.common}</h1>
             <div className="flex flex-col gap-[50px] md:flex-row  md:justify-between">
