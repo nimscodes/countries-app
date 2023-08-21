@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import axios from 'axios'
 import useDarkMode from './hooks/useDarkMode';
 import Header from './components/Header';
 import data from '../data.json';
@@ -14,6 +15,14 @@ function App() {
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [term, setTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('https://restcountries.com/v3.1/all')
+      .then((response) => setCountries(response.data))
+      .catch(error => console.error('Error fetching data:', error)) 
+  }, []);
 
   const handleSearchChange = (event) => {
     setTerm(event.target.value);
@@ -34,7 +43,8 @@ function App() {
     setDarkMode(!checked);
   };
 
-  const countries = data;
+  console.log(countries)
+  
 
   return (
     <Router>

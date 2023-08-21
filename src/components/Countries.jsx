@@ -14,7 +14,7 @@ const Countries = ({
 }) => {
   const filteredCountries = data.filter(
     (country) =>
-      country.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+      country?.name.common.toLowerCase().includes(searchQuery.toLowerCase()) &&
       (selectedRegion === null || country.region === selectedRegion.value)
   );
 
@@ -80,7 +80,7 @@ const Countries = ({
 
   const renderedCountries = countriesToDisplay.map((country) => {
     return (
-      <Link to={`/country/${country.name}`} key={country.name}>
+      <Link to={`/country/${country.name.common}`} key={country.name.common}>
         <Country country={country} />
       </Link>
     );
