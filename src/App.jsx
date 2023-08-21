@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import axios from 'axios'
+import axios from 'axios';
 import useDarkMode from './hooks/useDarkMode';
 import Header from './components/Header';
-import data from '../data.json';
 import Countries from './components/Countries';
 import CountryDetail from './components/CountryDetail';
 
@@ -21,7 +20,7 @@ function App() {
     axios
       .get('https://restcountries.com/v3.1/all')
       .then((response) => setCountries(response.data))
-      .catch(error => console.error('Error fetching data:', error)) 
+      .catch((error) => console.error('Error fetching data:', error));
   }, []);
 
   const handleSearchChange = (event) => {
@@ -29,9 +28,9 @@ function App() {
   };
 
   const handlePageChange = (newPage) => {
-    if (typeof newPage === 'number'){
+    if (typeof newPage === 'number') {
       setCurrentPage(newPage);
-    } 
+    }
   };
 
   const onRegionChange = (option) => {
@@ -42,7 +41,6 @@ function App() {
     setTheme(colorTheme);
     setDarkMode(!checked);
   };
-
 
   return (
     <Router>
@@ -66,7 +64,12 @@ function App() {
             />
             <Route
               path="/country/:name"
-              element={<CountryDetail countries={countries} currentPage={currentPage} />}
+              element={
+                <CountryDetail
+                  countries={countries}
+                  currentPage={currentPage}
+                />
+              }
             />
           </Routes>
         </div>
