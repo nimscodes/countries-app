@@ -63,7 +63,7 @@ const CountryDetail = ({ countries, currentPage }) => {
             className="w-full h-full object-cover"
           />
         </figure>
-        <div className="w-full flex flex-col gap-[50px] lg:items-center lg:justify-center lg:flex-1">
+        <div className="w-full flex flex-col gap-[50px] lg:flex-1">
           <div className="flex flex-col gap-8">
             <h1 className="text-2xl font-bold">{country?.name.common}</h1>
             <div className="flex flex-col gap-[50px] md:flex-row  md:justify-between">
